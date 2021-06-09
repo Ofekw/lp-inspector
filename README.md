@@ -4,7 +4,7 @@
 
 A tool to calculate your lp worth in the staking contract.
 
-http://howmuchismylp.com/
+http://howmuchismylp.xyz/
 
 # License
 
