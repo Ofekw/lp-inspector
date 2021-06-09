@@ -1,12 +1,12 @@
 .balance-details-container {
-  background: rgba(170, 149, 133, 0.4);
+  background: #AE93DC;
   margin-top: 2rem;
   border-radius: 4px;
 }
 
 .balance-details-container > h2 {
   border-radius: 4px;
-  background: rgba(170, 149, 133, 0.7);
+  background: #B8A3E1;
   font-size: 1.25rem;
   padding: 1rem;
   display: flex;
