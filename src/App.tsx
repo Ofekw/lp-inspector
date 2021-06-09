@@ -52,7 +52,7 @@ function App() {
           <div className="app-header">
             <div className="app-header-left">
               <FontAwesomeIcon icon={faSearchDollar} className="app-icon" />
-              <h1>How much is my LP worth?</h1>
+              <h1>How much is my LP worth? Polygon (Matic) Edition ✨</h1>
             </div>
             {wa.web3 && (
               <ConnectWallet callback={setAddress}>Connect</ConnectWallet>

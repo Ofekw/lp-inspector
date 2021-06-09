@@ -12,8 +12,10 @@ function Footer({ showDonate }: FooterProps) {
     <footer className="footer-container">
       {showDonate && <Donate />}
       <p>
-        How much is my LP worth? by <b>nopantytonight ✨</b> The source code is
-        licensed <b>MIT</b>.
+        How much is my LP worth? by <b>Newbieshwa 🎉</b> (forked from nopantytonight) 
+      </p>
+      <p>
+      The source code is licensed MIT.
       </p>
     </footer>
   );

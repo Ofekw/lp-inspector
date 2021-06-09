@@ -1,10 +1,8 @@
 import React from "react";
 import Web3 from "web3";
-import { AUTO } from "./constants";
 import { BalanceLP, Balance } from "../types";
 import { calculate } from "./token";
 const masterape = require("../abis/masterape.json");
-const auto = require("../abis/auto.json");
 
 export async function queryContract(
   routerContractAddress: string,
@@ -16,29 +14,23 @@ export async function queryContract(
   if (!contractAddress) return;
 
   const provider = new Web3.providers.HttpProvider(
-    "https://bsc-dataseed3.ninicoin.io/",
+    "https://rpc-mainnet.maticvigil.com/",
     {
       timeout: 120000,
     }
   );
   const web3 = new Web3(provider);
-  const autoContract = new web3.eth.Contract(auto, contractAddress);
   const contract = new web3.eth.Contract(masterape, contractAddress);
   const _poolLength = await contract.methods.poolLength().call();
 
   const _userInfoResults = await Promise.all(
-    [...Array(parseInt(_poolLength))].map((item, poolId) =>
-      contractAddress === AUTO
-        ? poolId
-          ? autoContract.methods.stakedWantTokens(poolId, account).call()
-          : "0"
-        : contract.methods.userInfo(poolId, account).call()
+    [...Array(parseInt(_poolLength))].map((item, poolId) => contract.methods.userInfo(poolId, account).call()
     )
   );
 
   const _balances = _userInfoResults
     .map((result, poolId) => {
-      const balance = contractAddress === AUTO ? result : result["0"];
+      const balance = result["0"];
       return { pool: poolId, balance };
     })
     .filter((b) => b.balance !== "0");
