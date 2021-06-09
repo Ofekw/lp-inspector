@@ -11,7 +11,7 @@ interface ConnectWalletProps {
 }
 
 const injectedConnector = new InjectedConnector({
-  supportedChainIds: [56],
+  supportedChainIds: [137],
 });
 
 function ConnectWallet({ children, callback }: ConnectWalletProps) {
@@ -21,7 +21,7 @@ function ConnectWallet({ children, callback }: ConnectWalletProps) {
 
   useEffect(() => {
     if (error && error instanceof UnsupportedChainIdError) {
-      setBtnText("Supported only BSC chain (56).");
+      setBtnText("Supported only Polygon chain (137).");
       setBtnClass("connect-wallet-btn connect-wallet-btn-error");
     } else if (account) {
       setBtnClass("connect-wallet-btn");

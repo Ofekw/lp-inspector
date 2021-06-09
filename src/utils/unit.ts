@@ -8,6 +8,10 @@ export function weiToEth(wei: string): string {
   return Web3.utils.fromWei(wei);
 }
 
+export function weiToUSDC(wei: string): string {
+  return Web3.utils.fromWei(wei, 'mwei');
+}
+
 export function usdtToWei(usdt: string): string {
   return Web3.utils.toWei(usdt, 'mwei');
 }

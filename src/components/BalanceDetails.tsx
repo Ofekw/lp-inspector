@@ -69,7 +69,6 @@ function BalanceDetails({
     setInvalidContract(false);
     promiseRetry(function (retry, number) {
       setRetryNumber(number - 1);
-
       return queryContract(
         routerContractAddress,
         setBalances,

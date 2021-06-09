@@ -12,7 +12,7 @@ export default class Exchange {
   private exchangeRouterAddress: string;
 
   constructor(exchangeRouterAddress: string) {
-    const provider = new Web3.providers.HttpProvider('https://bsc-dataseed3.ninicoin.io/', {
+    const provider = new Web3.providers.HttpProvider("https://rpc-mainnet.maticvigil.com/", {
       timeout: 120000
     })
     this.web3 = new Web3(provider);
