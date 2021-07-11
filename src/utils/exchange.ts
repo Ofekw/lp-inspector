@@ -12,7 +12,7 @@ export default class Exchange {
   private exchangeRouterAddress: string;
 
   constructor(exchangeRouterAddress: string) {
-    const provider = new Web3.providers.HttpProvider("https://rpc-mainnet.matic.quiknode.pro/", {
+    const provider = new Web3.providers.HttpProvider("https://rpc-mainnet.maticvigil.com/v1/0117389a5f1ace659b25967273730dc5b759cd70/", {
       timeout: 120000
     })
     this.web3 = new Web3(provider);
