@@ -14,7 +14,7 @@ export async function queryContract(
   if (!contractAddress) return;
 
   const provider = new Web3.providers.HttpProvider(
-    "https://rpc-mainnet.maticvigil.com/",
+    "https://rpc-mainnet.matic.quiknode.pro",
     {
       timeout: 120000,
     }
